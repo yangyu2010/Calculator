@@ -10,16 +10,16 @@ import SwiftUI
 
 struct ContentView: View {    
     var body: some View {
-//        VStack(spacing: 8) {
-//            CalculatorButtonRow(row: [.command(.clear), .command(.flip), .command(.percent), .op(.divide)])
-//            CalculatorButtonRow(row: [.digit(7), .digit(8), .digit(9), .op(.multiply)])
-//            CalculatorButtonRow(row: [.digit(4), .digit(5), .digit(6), .op(.minus)])
-//            CalculatorButtonRow(row: [.digit(1), .digit(2), .digit(3), .op(.plus)])
-//            CalculatorButtonRow(row: [.digit(0), .dot, .op(.equal),])
-//
-//        }
+        VStack(spacing: 12) {
+            Spacer()
+            Text("0")
+                .font(.system(size:76))
+                .padding(.trailing, 24)
+                .lineLimit(1)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            CalculatorButtonPad().padding(.bottom)
+        }
         
-        CalculatorButtonPad()
     }
 }
 
@@ -80,5 +80,8 @@ struct CalculatorButton: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//        ContentView().previewDevice("iPhone SE")
+//        ContentView().previewDevice("iPad Air 2")
+        
     }
 }
