@@ -56,7 +56,7 @@ struct CalculatorButtonRow: View {
                     size: item.size,
                     backgroundColorName:
                     item.backgroundColorName) {
-                    
+                        print("Button: \(item.title)")
                     }
 //                CalculatorButton(title: item.title, size: item.size, backgroundColorName: item.backgroundColorName) {
 //                    print("Button: \(item.title)")
@@ -73,6 +73,17 @@ struct CalculatorButton: View {
     let size: CGSize
     let backgroundColorName: String
     let action: () -> Void
+    
+//    var body: some View {
+//        ZStack {
+//            Circle()
+//                .frame(width: size.width, height: size.height)
+//                .foregroundColor(Color(backgroundColorName))
+//            Text(title)
+//                .font(.system(size: fontSize))
+//                .foregroundColor(Color(titleColor))
+//        }
+//    }
     
     var body: some View {
         Button(action: action) {
