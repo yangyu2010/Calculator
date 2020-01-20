@@ -50,9 +50,17 @@ struct CalculatorButtonRow: View {
     var body: some View {
         HStack(spacing: 8){
             ForEach(row, id:\.self) {item in
-                CalculatorButton(title: item.title, size: item.size, backgroundColorName: item.backgroundColorName) {
-                    print("Button: \(item.title)")
-                }
+                CalculatorButton(
+                    title: item.title,
+                    titleColor: item.titleColor,
+                    size: item.size,
+                    backgroundColorName:
+                    item.backgroundColorName) {
+                    
+                    }
+//                CalculatorButton(title: item.title, size: item.size, backgroundColorName: item.backgroundColorName) {
+//                    print("Button: \(item.title)")
+//                }
             }
         }
     }
@@ -60,6 +68,7 @@ struct CalculatorButtonRow: View {
 
 struct CalculatorButton: View {
     let title: String
+    let titleColor: String
     let fontSize: CGFloat = 38
     let size: CGSize
     let backgroundColorName: String
@@ -69,7 +78,7 @@ struct CalculatorButton: View {
         Button(action: action) {
             Text(title)
                 .font(.system(size: fontSize))
-                .foregroundColor(.white)
+                .foregroundColor(Color(titleColor))
                 .frame(width: size.width, height: size.height)
                 .background(Color(backgroundColorName))
                 .cornerRadius(size.width * 0.5)

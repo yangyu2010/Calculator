@@ -45,6 +45,15 @@ extension CalculatorButtonItem {
         }
     }
     
+    var titleColor: String {
+        switch self {
+        case .command:
+            return "commandTitleColor"
+        default:
+            return "normalTitleColor"
+        }
+    }
+    
     var size: CGSize {
         switch self {
         case .digit(let num):
